@@ -16,10 +16,9 @@ import java.util.StringTokenizer;
 public class WordCount {
 
 
-
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = new Configuration(true);
-        Job job = Job.getInstance(conf,"wc");
+        Job job = Job.getInstance(conf, "wc");
         job.setJarByClass(WordCount.class);
         job.setMapperClass(TokenizerMapper.class);
         job.setCombinerClass(IntSumReducer.class);
@@ -27,13 +26,17 @@ public class WordCount {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
         FileInputFormat.addInputPath(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        Path outPut = new Path(args[1]);
+        if (outPut.getFileSystem(conf).exists(outPut)) {
+            outPut.getFileSystem(conf).delete(outPut, true);
+        }
+        FileOutputFormat.setOutputPath(job, outPut);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
 
     }
 
     public static class TokenizerMapper
-            extends Mapper<Object, Text, Text, IntWritable>{
+            extends Mapper<Object, Text, Text, IntWritable> {
 
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
@@ -49,7 +52,7 @@ public class WordCount {
     }
 
     public static class IntSumReducer
-            extends Reducer<Text,IntWritable,Text,IntWritable> {
+            extends Reducer<Text, IntWritable, Text, IntWritable> {
         private IntWritable result = new IntWritable();
 
         public void reduce(Text key, Iterable<IntWritable> values,
