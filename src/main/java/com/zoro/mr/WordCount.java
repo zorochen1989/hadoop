@@ -15,7 +15,6 @@ import java.util.StringTokenizer;
 
 public class WordCount {
 
-
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         Configuration conf = new Configuration(true);
         Job job = Job.getInstance(conf, "wc");
