@@ -2,7 +2,6 @@ package com.zoro.design.create.singleton;
 
 /**
  * 饿汉式单例模式：
- * 可能会造成内存浪费。
  */
 public class SingletonType01 {
 
@@ -14,6 +13,7 @@ public class SingletonType01 {
 
     /**
      * 静态常量饿汉式
+     * 可以用，可能会造成内存浪费。
      */
     private static class Singleton {
 
@@ -32,6 +32,7 @@ public class SingletonType01 {
 
     /**
      * 静态代码块饿汉式
+     * 可以用，可能会造成内存浪费。
      */
     private static class Singleton2 {
 
