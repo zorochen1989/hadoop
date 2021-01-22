@@ -11,7 +11,7 @@ public class MeatPizza extends Pizza {
 
     @Override
     public Pizza prepare() {
-        System.out.println("准备纯肉披萨食材。。。");
+        System.out.println(this.hashCode()+"准备纯肉披萨食材。。。");
         return this;
     }
 }

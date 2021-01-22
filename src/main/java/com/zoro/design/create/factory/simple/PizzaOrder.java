@@ -23,6 +23,5 @@ public class PizzaOrder {
     public static void main(String[] args) {
         PizzaOrder order = new PizzaOrder("meat");
         PizzaOrder order2 = new PizzaOrder("apple");
-        PizzaOrder order3 = new PizzaOrder("apple1");
     }
 }

@@ -14,7 +14,7 @@ public class ApplePizza extends Pizza {
 
     @Override
     public ApplePizza prepare() {
-        System.out.println("准备苹果披萨食材。。。");
+        System.out.println(this.hashCode()+"准备苹果披萨食材。。。");
         return this;
     }
 

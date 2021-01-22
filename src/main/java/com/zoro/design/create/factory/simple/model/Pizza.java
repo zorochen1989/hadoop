@@ -26,7 +26,7 @@ public abstract class Pizza {
      * 烤
      */
     public Pizza bake() {
-        System.out.println("正在烤。。。。");
+        System.out.println(this.hashCode()+"正在烤。。。。");
         return this;
     }
 
@@ -34,7 +34,7 @@ public abstract class Pizza {
      * 切
      */
     public Pizza cut() {
-        System.out.println("正在切。。。。");
+        System.out.println(this.hashCode()+"正在切。。。。");
         return this;
     }
 
@@ -42,7 +42,7 @@ public abstract class Pizza {
      * 打包
      */
     public Pizza box() {
-        System.out.println("正在打包。。。。");
+        System.out.println(this.hashCode()+"正在打包。。。。");
         return this;
     }
 
