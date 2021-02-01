@@ -23,6 +23,7 @@
         <module name="ch21-zk" />
         <module name="ch22-case-studies" />
         <module name="common" />
+        <module name="flink" />
         <module name="hadoop" />
         <module name="snippet" />
       </profile>
