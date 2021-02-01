@@ -23,11 +23,13 @@
         <module name="ch21-zk" />
         <module name="ch22-case-studies" />
         <module name="common" />
-        <module name="flink" />
         <module name="hadoop" />
         <module name="snippet" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="flink" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

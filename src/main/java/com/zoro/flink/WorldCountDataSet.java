@@ -37,6 +37,5 @@ public class WorldCountDataSet {
             System.out.println("key:" + model.f0 + " || value:" + model.f1);
         });
 
-
     }
 }
