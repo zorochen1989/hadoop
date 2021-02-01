@@ -23,7 +23,8 @@
     </property>
     <property>
         <name>dfs.namenode.secondary.http-address</name>
-        <value>node-1:50090</value>
+        <value>192.168.6.161:50090</value>
+        <!--<value>node-1:50090</value>-->
     </property>
     <property>
         <name>dfs.permissions</name>

@@ -15,7 +15,8 @@ public class WorldCountDataSet {
         // 获取运行时环境：批处理的
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
 
-        String input = "hdfs://node-1:9000/wordcount/word.txt";
+        //String input = "hdfs://node-1:9000/wordcount/word.txt";
+        String input = "hdfs://192.168.6.161:9000/wordcount/word.txt";
 
         // 读取数据源
         DataSource<String> text = env.readTextFile(input);
@@ -35,6 +36,8 @@ public class WorldCountDataSet {
 
         collect.forEach(model -> {
             System.out.println("key:" + model.f0 + " || value:" + model.f1);
+            // TODO
+
         });
 
     }
