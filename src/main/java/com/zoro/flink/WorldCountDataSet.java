@@ -52,7 +52,7 @@ public class WorldCountDataSet {
         // 删除数据操作所需代码 start
         Row row = new Row(0);
         DataSet<Row> dataSourceDel = env.fromElements(row);
-        String sqlDel = "delete from word ";
+        String sqlDel = "delete from word";
         // 删除数据操作所需代码 end
 
         // 构造数据源

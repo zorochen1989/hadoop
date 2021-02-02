@@ -23,54 +23,56 @@
 
     <properties>
         <oracle.version>11.2.0.3</oracle.version>
+        <flink.version>1.9.1</flink.version>
+        <hadoop.version>2.5.0</hadoop.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>2.5.0</version>
+            <version>${hadoop.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-hdfs</artifactId>
-            <version>2.5.0</version>
+            <version>${hadoop.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
-            <version>2.5.0</version>
+            <version>${hadoop.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-java</artifactId>
-            <version>1.9.1</version>
+            <version>${flink.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-java_2.12</artifactId>
-            <version>1.9.1</version>
+            <version>${flink.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-scala -->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-scala_2.12</artifactId>
-            <version>1.9.1</version>
+            <version>${flink.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.flink/flink-streaming-scala -->
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-scala_2.12</artifactId>
-            <version>1.9.1</version>
+            <version>${flink.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-clients_2.12</artifactId>
-            <version>1.9.1</version>
+            <version>${flink.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.bahir/flink-connector-redis -->
@@ -106,6 +108,5 @@
         </dependency>
 
     </dependencies>
-
 
 </project>
