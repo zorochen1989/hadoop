@@ -49,9 +49,11 @@ public class WorldCountDataSet {
             list.add(row);
         });
 
+        // 构造数据源
         DataSet<Row> dataSource = env.fromCollection(list);
         String sql = "insert into word(w_name,w_count) values(?,?)";
-        ExecuteDataUtil.execute(dataSource,sql);
+        // 执行数据入库操作
+        ExecuteDataUtil.execute(dataSource, sql);
         env.execute();
     }
 }
