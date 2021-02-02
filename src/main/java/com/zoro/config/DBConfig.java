@@ -1,5 +1,8 @@
 package com.zoro.config;
 
+/**
+ * 数据库相关配置
+ */
 public class DBConfig {
 
     public static String ORACLE_URL = "jdbc:oracle:thin:@192.168.6.54:1521:helowin";
