@@ -49,11 +49,24 @@ public class WorldCountDataSet {
             list.add(row);
         });
 
+        // 删除数据操作所需代码 start
+        Row row = new Row(0);
+        DataSet<Row> dataSourceDel = env.fromElements(row);
+        String sqlDel = "delete from word ";
+        // 删除数据操作所需代码 end
+
         // 构造数据源
         DataSet<Row> dataSource = env.fromCollection(list);
-        String sql = "insert into word(w_name,w_count) values(?,?)";
+        String sqlSave = "insert into word(w_name,w_count) values(?,?)";
+
+        // 执行数据删除操作
+        ExecuteDataUtil.execute(dataSourceDel, sqlDel);
+        env.execute();
+
+        Thread.sleep(4000);
+
         // 执行数据入库操作
-        ExecuteDataUtil.execute(dataSource, sql);
+        ExecuteDataUtil.execute(dataSource, sqlSave);
         env.execute();
     }
 }
