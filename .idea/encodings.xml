@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/book" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch02-mr-intro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch03-hdfs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch05-io" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch06-mr-dev" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch08-mr-types" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch09-mr-features" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch12-avro" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch13-parquet" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch15-sqoop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch16-pig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch17-hive" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch18-crunch" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch19-spark" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch20-hbase" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch21-zk" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/ch22-case-studies" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/hadoop-examples" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../P/hadoop-book-master/snippet" charset="UTF-8" />
+  </component>
+</project>
