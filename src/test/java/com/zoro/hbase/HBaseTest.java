@@ -1,5 +1,6 @@
 package com.zoro.hbase;
 
+import com.zoro.hbase.util.HBaseUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
@@ -12,6 +13,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 
 public class HBaseTest {
@@ -37,14 +40,41 @@ public class HBaseTest {
         connection.close();
     }
 
+    /**
+     * 创建表
+     *
+     * @throws IOException
+     */
     @Test
     public void createTable() throws IOException {
 
         HTableDescriptor table = new HTableDescriptor(TableName.valueOf(tableName));
-        HColumnDescriptor hcd = new HColumnDescriptor("area");
+        HColumnDescriptor hcd = new HColumnDescriptor("work");
         table.addFamily(hcd);
         admin.createTable(table);
 
+    }
+
+    /**
+     * 添加列簇
+     *
+     * @throws IOException
+     */
+    @Test
+    public void alterFamily() throws IOException {
+        // 表名
+        TableName t = TableName.valueOf(tableName);
+        // 先禁用table
+        admin.disableTable(t);
+
+        // 获取HTableDescriptor
+        HTableDescriptor table = admin.getTableDescriptor(t);
+
+        // 新增列簇
+        HColumnDescriptor hcd = new HColumnDescriptor("work");
+        table.addFamily(hcd);
+        admin.addColumn(t, hcd);
+        admin.enableTableAsync(t);
     }
 
     /**
@@ -220,5 +250,49 @@ public class HBaseTest {
         Table table = connection.getTable(TableName.valueOf(tableName));
         Delete delete = new Delete("3".getBytes());
         table.delete(delete);
+    }
+
+    /**
+     * 新增或者更新
+     */
+    @Test
+    public void saveOrUpdate() throws IOException {
+
+        // 表
+        Table table = connection.getTable(TableName.valueOf(tableName));
+
+        // put操作
+        String rowKey = "3";
+        Put put = new Put(rowKey.getBytes());
+
+        // 列簇
+        String family = "work";
+
+        // 数据
+        Map<String, String> map = new LinkedHashMap<>();
+        map.put("superHot", "3");
+        map.put("firstHot", "3");
+        map.put("secondHot", "2");
+        map.put("rsWork", "2");
+        map.put("bpWork", "2");
+        map.put("highSpaceWork", "1");
+        map.put("hoistingWork", "2");
+        map.put("tempElectricity", "3");
+        map.put("groundWork", "4");
+        map.put("openCircuitWork", "1");
+        map.put("productionNum", "2");
+        map.put("runNum", "3");
+        map.put("stopNum", "4");
+        map.put("majorSourceLevel1", "1");
+        map.put("majorSourceLevel2", "1");
+        map.put("majorSourceLevel3", "1");
+        map.put("majorSourceLevel4", "1");
+        map.put("parkingInProgressNum", "2");
+        map.put("pilotPlantNum", "3");
+        map.put("focusMonitoringHazardousNum", "4");
+        map.put("checkMaintenanceNum", "1");
+
+        // 执行更新操作
+        HBaseUtil.saveOrUpdate(table, put, Bytes.toBytes(family), map);
     }
 }
