@@ -12,6 +12,9 @@ import org.apache.flink.util.Collector;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 静态数据，文件存放
+ */
 public class WorldCountDataSet {
 
     public static void main(String[] args) throws Exception {

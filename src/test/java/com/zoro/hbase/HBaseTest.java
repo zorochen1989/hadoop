@@ -49,8 +49,10 @@ public class HBaseTest {
     public void createTable() throws IOException {
 
         HTableDescriptor table = new HTableDescriptor(TableName.valueOf(tableName));
-        HColumnDescriptor hcd = new HColumnDescriptor("work");
-        table.addFamily(hcd);
+        HColumnDescriptor info = new HColumnDescriptor("info");
+        HColumnDescriptor work = new HColumnDescriptor("work");
+        table.addFamily(info);
+        table.addFamily(work);
         admin.createTable(table);
 
     }
@@ -86,8 +88,8 @@ public class HBaseTest {
     public void insert() throws IOException {
         Table table = connection.getTable(TableName.valueOf(tableName));
 
-        Put put = new Put("3".getBytes());
-        byte[] columnFamily = Bytes.toBytes("area");
+        Put put = new Put("1".getBytes());
+        byte[] columnFamily = Bytes.toBytes("info");
 
         // provinceCode
         byte[] provinceCode = Bytes.toBytes("provinceCode");
@@ -135,8 +137,9 @@ public class HBaseTest {
 
 
         Get get = new Get("1".getBytes());
+
         Result result = table.get(get);
-        byte[] columnFamily = Bytes.toBytes("area");
+        byte[] columnFamily = Bytes.toBytes("info");
 
         byte[] provinceCode = result.getValue(columnFamily, Bytes.toBytes("provinceCode"));
         byte[] cityCode = result.getValue(columnFamily, Bytes.toBytes("cityCode"));
@@ -163,11 +166,13 @@ public class HBaseTest {
     public void scan() throws IOException {
         Table table = connection.getTable(TableName.valueOf(tableName));
 
-        ResultScanner info = table.getScanner(Bytes.toBytes("area"));
+        ResultScanner info = table.getScanner(Bytes.toBytes("info"));
 
         for (Result result : info) {
+            System.out.println("result:"+result.toString());
+
             // 列簇-区域
-            byte[] family = "area".getBytes();
+            byte[] family = "info".getBytes();
 
             // 列簇下的唯一标识-provinceCode
             byte[] provinceCodes = "provinceCode".getBytes();
@@ -205,7 +210,7 @@ public class HBaseTest {
         Table table = connection.getTable(TableName.valueOf(tableName));
 
         Put put = new Put("3".getBytes());
-        byte[] columnFamily = Bytes.toBytes("area");
+        byte[] columnFamily = Bytes.toBytes("info");
 
         // provinceCode
         byte[] provinceCode = Bytes.toBytes("provinceCode");
@@ -262,7 +267,7 @@ public class HBaseTest {
         Table table = connection.getTable(TableName.valueOf(tableName));
 
         // put操作
-        String rowKey = "3";
+        String rowKey = "1";
         Put put = new Put(rowKey.getBytes());
 
         // 列簇
