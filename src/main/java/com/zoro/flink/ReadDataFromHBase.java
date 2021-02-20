@@ -1,6 +1,6 @@
 package com.zoro.flink;
 
-import com.zoro.hbase.reader.HBaseReader;
+import com.zoro.flink.reader.HBaseReader;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
@@ -32,7 +32,6 @@ public class ReadDataFromHBase {
 
 
         env.execute();
-
 
     }
 }

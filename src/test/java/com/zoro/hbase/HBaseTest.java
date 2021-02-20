@@ -1,6 +1,6 @@
 package com.zoro.hbase;
 
-import com.zoro.hbase.util.HBaseUtil;
+import com.zoro.util.HBaseUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;

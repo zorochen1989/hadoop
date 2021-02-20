@@ -1,4 +1,4 @@
-package com.zoro.hbase.util;
+package com.zoro.util;
 
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Table;

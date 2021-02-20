@@ -1,6 +1,6 @@
 package com.zoro.flink;
 
-import com.zoro.flink.util.ExecuteDataUtil;
+import com.zoro.util.ExecuteDataUtil;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.DataSet;
 import org.apache.flink.api.java.ExecutionEnvironment;
