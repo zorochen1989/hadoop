@@ -14,4 +14,5 @@ public class DBConfig {
     public static String MYSQL_USER = "root";
     public static String MYSQL_PWD = "root";
     public static String MYSQL_DRIVER = "com.mysql.jdbc.Driver";
+    public static String MYSQL_DRIVER2 = "com.mysql.jdbc.Driver";
 }
